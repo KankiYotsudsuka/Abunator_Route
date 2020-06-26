@@ -1,4 +1,4 @@
-#from selenium import webdriver
+from selenium import webdriver
 from selenium.webdriver import Chrome, ChromeOptions
 import time
 
@@ -20,7 +20,7 @@ driver.get("https://abunatorroute.azurewebsites.net/")
 #3秒待機
 time.sleep(3)
 
-#start.click
+#start.click 質問画面に遷移
 start=driver.find_element_by_class_name("start")
 start.click()
 
@@ -29,7 +29,11 @@ start.click()
 #no = driver.find_element_by_name('いいえ')
 
 #Xpathの場合
-#driver.findElement(By.xpath("//input[@value='はい']")).click();
+#no = driver.find_element_by_xpath("//input[@value='はい']").click()
+
+#タイトルが"解答画面"になるまで[はい],[いいえ]いずれかのボタンを押す
+#while driver.title == '質問画面':
+#    no = driver.find_element_by_xpath("//input[@value='はい']").click()
 
 time.sleep(3)
 no = driver.find_element_by_class_name("button")
@@ -52,7 +56,7 @@ no.click()
 time.sleep(3)
 no = driver.find_element_by_class_name("button")
 no.click()
-time.sleep(3)
+#time.sleep(3)
 no = driver.find_element_by_class_name("button")
 no.click()
 
@@ -61,12 +65,13 @@ time.sleep(3)
 back = driver.find_element_by_class_name("start")
 back.click()
 
+
+
+
 #図鑑に画面遷移
 time.sleep(3)
 picbook = driver.find_element_by_class_name("picture_book")
 picbook.click()
-
-
 
 #図鑑で特定の生物を指定し、画面遷移
 time.sleep(3)
@@ -77,6 +82,17 @@ setumei = driver.find_element_by_xpath("//input[@src='../static/imgs/1.png']").c
 time.sleep(3)
 back = driver.find_element_by_class_name("start")
 back.click()
+
+#40種すべて確認
+"""
+for i in range(40):
+    i = i + 1
+    time.sleep(3)
+    setumei = driver.find_element_by_xpath("//input[@src='../static/imgs/%d.png']" % i).click()
+    time.sleep(3)
+    back = driver.find_element_by_class_name("start")
+    back.click()
+"""
 
 #最初に戻る
 time.sleep(3)

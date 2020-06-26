@@ -7,10 +7,11 @@ Created on Fri Jun 26 10:11:57 2020
 
 
 #ヘッドレス（画面に出さない）でテストを行う
-
+from selenium import webdriver
 from selenium.webdriver import Chrome, ChromeOptions
 #from selenium import webdriver
 import time
+#import chromedriver_binary
 
 #driver = webdriver.Chrome("C:/Users/School/Desktop/test/abunator/abunator/test/chromedriver.exe")
 
@@ -77,8 +78,6 @@ back.click()
 picbook = driver.find_element_by_class_name("picture_book")
 picbook.click()
 
-
-
 #図鑑で特定の生物を指定し、画面遷移
 #setumei = driver.find_element_by_xpath("//input[@value='1']").click()
 setumei = driver.find_element_by_xpath("//input[@src='../static/imgs/1.png']").click()
@@ -86,6 +85,18 @@ setumei = driver.find_element_by_xpath("//input[@src='../static/imgs/1.png']").c
 #図鑑に戻る
 back = driver.find_element_by_class_name("start")
 back.click()
+
+#40種すべて確認 NoSuchElementExceptionがでることあり　Time.sleepいれると安定するかも
+
+"""
+for i in range(40):
+    i = i + 1
+    time.sleep(2)
+    setumei = driver.find_element_by_xpath("//input[@src='../static/imgs/%d.png']" % i).click()
+    time.sleep(2)
+    back = driver.find_element_by_class_name("start")
+    back.click()
+"""
 
 #最初に戻る
 last = driver.find_element_by_tag_name("a")
