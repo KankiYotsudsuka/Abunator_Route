@@ -7,9 +7,10 @@ Created on Fri Jun 26 10:11:57 2020
 
 
 #ヘッドレス（画面に出さない）でテストを行う
-
+from selenium import webdriver
 from selenium.webdriver import Chrome, ChromeOptions
 import time
+#import chromedriver_binary
 
 #driver = webdriver.Chrome("C:/Users/School/Desktop/test/abunator/abunator/test/chromedriver.exe")
 
