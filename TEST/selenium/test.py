@@ -4,7 +4,7 @@ import time
 
 #githubのChromeDriver.exeをつかいたい 現状ローカルなので他の人が使えない
 #Cドライブ直下などメンバーで統一すれば使える
-#driver = webdriver.Chrome("C:/Users/School/Desktop/test/abunator/abunator/test/chromedriver.exe")
+#driver = webdriver.Chrome("C:/Users/root/Desktop/chromedriver.exe")
 #こちらのGitHubから持ってきたい
 #driver = webdriver.Chrome(executable_path="https://github.com/kkakkoottaaaniiiia/abunator/tree/master/test/chromedriver.exe")
 

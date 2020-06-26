@@ -9,6 +9,7 @@ Created on Fri Jun 26 10:11:57 2020
 #ヘッドレス（画面に出さない）でテストを行う
 
 from selenium.webdriver import Chrome, ChromeOptions
+#from selenium import webdriver
 import time
 
 #driver = webdriver.Chrome("C:/Users/School/Desktop/test/abunator/abunator/test/chromedriver.exe")
@@ -18,7 +19,7 @@ options = ChromeOptions()
 options.add_argument('--headless')
 # ChromeのWebDriverオブジェクトを作成する。
 driver = Chrome(options=options)
-
+#driver = webdriver.Chrome("C:/Users/root/Desktop/chromedriver.exe")
 #abunatorを起動
 driver.get("https://abunatorroute.azurewebsites.net/")
 
