@@ -7,7 +7,7 @@ Created on Fri Jun 26 10:11:57 2020
 
 
 #ヘッドレス（画面に出さない）でテストを行う
-from selenium import webdriver
+#from selenium import webdriver
 from selenium.webdriver import Chrome, ChromeOptions
 #from selenium import webdriver
 import time
